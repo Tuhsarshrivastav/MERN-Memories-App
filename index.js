@@ -12,7 +12,9 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/posts", postRoutes);
-
+app.get("/", (req, res) => {
+  res.send("hello to memories API");
+});
 const CONNECTION_URL =
   "mongodb+srv://mern:mern@cluster0.nz9i8.mongodb.net/mern-memories-app?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 5000;

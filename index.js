@@ -1,14 +1,15 @@
-import express from "express";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
-import cors from "cors";
+const express = require('express')
 
-import postRoutes from "./routes/posts.js";
+const mongoose = require('mongoose')
+
+const cors = require('cors')
+
+const postRoutes = require('./routes/posts');
 
 const app = express();
 
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/posts", postRoutes);

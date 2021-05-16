@@ -1,3 +1,4 @@
+require("dotenv").config();
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
@@ -26,7 +27,6 @@ if (process.env.NODE_ENV == "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-
 mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>

@@ -15,7 +15,7 @@ app.use(cors());
 app.use("/posts", postRoutes);
 
 const CONNECTION_URL =
-  "mongodb+srv://mern:mern@cluster0.nz9i8.mongodb.net/mern-memories-app?retryWrites=true&w=majority";
+  //paste your mongo db config
 const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV == "production") {
   app.use(express.static("client/build"));
